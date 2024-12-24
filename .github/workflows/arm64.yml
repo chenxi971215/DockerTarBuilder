@@ -29,9 +29,9 @@ jobs:
             docker pull "${image}" --platform "linux/arm64"
             image_tag=${image/":"/"-"}
             image_tag=${image_tag//\//_}
-            docker tag "${image}" crpi-w74i707dscu3e5f6.cn-shanghai.personal.cr.aliyuncs.com/jiangzhonghui/nvidia:${image_tag}
-            echo "${password}" | docker login --username=kkry2333 --password-stdin crpi-w74i707dscu3e5f6.cn-shanghai.personal.cr.aliyuncs.com
-            docker push crpi-w74i707dscu3e5f6.cn-shanghai.personal.cr.aliyuncs.com/jiangzhonghui/nvidia:${image_tag}
+            docker tag "${image}" crpi-qvs50lu24588on18.cn-shanghai.personal.cr.aliyuncs.com/cx_work/develop:${image_tag}
+            echo "${password}" | docker login --username=我一定要快乐呀呀 --password-stdin crpi-qvs50lu24588on18.cn-shanghai.personal.cr.aliyuncs.com
+            docker push crpi-qvs50lu24588on18.cn-shanghai.personal.cr.aliyuncs.com/cx_work/develop:${image_tag}
           done
           echo "Succeed to push to aliyuncs!"
           for image in "${image_array[@]}"; do
