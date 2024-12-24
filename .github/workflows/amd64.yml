@@ -28,8 +28,8 @@ jobs:
       run: |
         images="${{ github.event.inputs.docker_images }}"
         password="${{ github.event.inputs.docker_password }}"
-          IFS=',' read -r -a image_array <<< "$images"
-          for image in "${image_array[@]}"; do
+        IFS=',' read -r -a image_array <<< "$images"
+        for image in "${image_array[@]}"; do
           docker pull "${image}" --platform "linux/amd64"
           #docker save "${image}" -o "${image//\//_}-amd64.tar"
           image_tag=${image/":"/"-"}
