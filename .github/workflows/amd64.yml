@@ -35,7 +35,7 @@ jobs:
           image_tag=${image/":"/"-"}
           image_tag=${image_tag//\//_}
           docker tag "${image}" crpi-qvs50lu24588on18.cn-shanghai.personal.cr.aliyuncs.com/cx_work/develop:${image_tag}
-          echo "${password}" | docker login --username=我一定要快乐呀呀 crpi-qvs50lu24588on18.cn-shanghai.personal.cr.aliyuncs.com
+          echo "${password}" | docker login --username=我一定要快乐呀呀 --password-stdin crpi-qvs50lu24588on18.cn-shanghai.personal.cr.aliyuncs.com
           docker push crpi-qvs50lu24588on18.cn-shanghai.personal.cr.aliyuncs.com/cx_work/develop:${image_tag}
         done
         echo "Succeed to push to aliyuncs!"
